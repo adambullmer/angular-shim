@@ -1,0 +1,25 @@
+{
+  "moduleId": "angular",
+  "env": {
+    "amd": {
+      "plugins": [
+        "transform-es2015-modules-amd"
+      ]
+    },
+    "cjs": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "systemjs": {
+      "plugins": [
+        "transform-es2015-modules-systemjs"
+      ]
+    },
+    "umd": {
+      "plugins": [
+        "transform-es2015-modules-umd"
+      ]
+    }
+  }
+}
