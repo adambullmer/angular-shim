@@ -1,10 +1,19 @@
 {
   "name": "angular-shim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ES6 compiled AMD wrapper for Angular.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint src/*.js dist/*.js",
+
+    "prebuild": "rm -rf dist && mkdir -p dist",
+    "build": "npm run amd && npm run cjs && npm run es6 && npm run systemjs && npm run umd",
+
+    "amd": "BABEL_ENV=amd babel src/angular-shim.js --out-file dist/angular-shim.amd.js",
+    "cjs": "BABEL_ENV=cjs babel src/angular-shim.js --out-file dist/angular-shim.cjs.js",
+    "es6": "cp src/angular-shim.js dist/angular-shim.es6.js",
+    "systemjs": "BABEL_ENV=systemjs babel src/angular-shim.js --out-file dist/angular-shim.system.js",
+    "umd": "BABEL_ENV=umd babel src/angular-shim.js --out-file dist/angular-shim.umd.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +29,14 @@
   "bugs": {
     "url": "https://github.com/adambullmer/angular-shim/issues"
   },
-  "homepage": "https://github.com/adambullmer/angular-shim#readme"
+  "homepage": "https://github.com/adambullmer/angular-shim#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-es2015-modules-amd": "^6.6.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.6.5",
+    "babel-plugin-transform-es2015-modules-umd": "^6.6.5",
+    "jscs": "^2.11.0",
+    "jshint": "^2.9.1"
+  }
 }
