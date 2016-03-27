@@ -1,8 +1,8 @@
 {
   "name": "angular-shim",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "ES6 compiled AMD wrapper for Angular.js",
-  "main": "index.js",
+  "main": "src/angular-shim.js",
   "scripts": {
     "test": "jshint src/*.js dist/*.js",
 
@@ -21,8 +21,12 @@
   },
   "keywords": [
     "angular",
+    "shim",
     "amd",
-    "shim"
+    "commonjs",
+    "cjs",
+    "umd",
+    "systemjs"
   ],
   "author": "Adam Bullmer <psycodrumfreak@gmail.com>",
   "license": "MIT",
